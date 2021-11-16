@@ -18,6 +18,14 @@ public class Form {
     private JTextField Jtxt_ar;
     private JLabel JL_forint;
     private JLabel JL_koltseg;
+    private JLabel JL_hely;
+    private JTextField Jtxt_benzinkut;
+    private JTextField Jcb_koltseg;
+    private JComboBox Jcb_hely;
+    private JButton JB_feltolt;
+    private JTextArea JtxtA_esemeny;
+    private JButton Jb_osszefog;
+    private JLabel JL_osszefogl;
 
     public Form() {
         Jb_feldolgoz.addActionListener(new ActionListener() {
@@ -41,6 +49,21 @@ public class Form {
                     case 3 : Jtxt_ar.setText("490"); break;
                     default: Jtxt_ar.setText("470");
                 }
+                Double ar = Double.parseDouble(Jtxt_ar.getText());
+                Jcb_koltseg.setText(Double.toString(Double.parseDouble(Jtxt_fogyaszta.getText())));
+            }
+        });
+        JB_feltolt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!(Jtxt_benzinkut.getText().equals(""))){
+                    Jcb_hely.addItem(Jtxt_benzinkut.getText());
+                }
+            }
+        });
+        Jb_osszefog.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
             }
         });
